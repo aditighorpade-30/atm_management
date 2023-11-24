@@ -1,0 +1,19 @@
+<div class="card text-center">
+    <div class="card-header">
+        <h1>Upcoming ATM Events</h1>
+        <hr>
+    </div>
+    <!--<div><a href="#" class="btn btn-primary">Admin View</a></div><br>-->
+    Available Balance:<div><input style="text-align: center;" type="text" value="number" [value]="accountDetails"/></div>
+    <table class="table table-bordered">
+        <div class="card-body">
+            <h2 class="card-title">All ATM Events</h2>
+            <!-- <div><a class="btn btn-info" [routerLink]="['/transaction-history']">Transaction History</a></div><br> -->
+            <div><a class="btn btn-info" (click)="transactionHistory()">Transaction History</a></div><br>
+            <div><a class="btn btn-info" [routerLink]="['/transfer-amount']">Transfer Amount</a></div><br>
+            <div><a class="btn btn-info" [routerLink]="['/withdraw']">Withdraw Amount</a></div><br>
+            <div><a class="btn btn-info" [routerLink]="['/deposit']">Deposit Amount</a></div><br>
+        </div>
+    </table>
+</div> 
+

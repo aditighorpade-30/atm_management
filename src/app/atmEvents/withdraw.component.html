@@ -1,0 +1,22 @@
+<div class="col-md-6 offset-md-3">
+    <a [routerLink]="['/atmEvents']">
+        <button type="menu" class="btn btn-primary">Back</button>
+    </a>
+    <h3>Withdraw Amount</h3>
+    <form (ngSubmit) = "onSubmit()">
+        <div class="form-group">
+            <label>Account Number</label>
+            <input type = "text" class="form-control" id="accNo"
+                [(ngModel)] = "withdraw.accNo" name = "accNo" placeholder="Enter Account No."/>
+        </div>
+        <div class="form-group">
+            <label>Amount</label>
+            <input type = "text" class="form-control" id="amount"
+                [(ngModel)] = "withdraw.amount" name = "amount" placeholder="Enter Amount"/>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success" type="submit"> Withdraw</button>
+        </div>
+    </form>
+</div>
+  

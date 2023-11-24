@@ -1,0 +1,39 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()"class="col-md-6 offset-md-3 ">
+    <h3>Login</h3>
+    <div class="form-group">
+        <label for="userName">Username</label>
+        <input type="text" formControlName="userName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['userName'].errors }" placeholder="Please Enter your Username" />
+        <div *ngIf="submitted && f['userName'].errors" class="invalid-feedback">
+            <div *ngIf="f['userName'].errors['required']">Username is required</div>
+        </div>
+        <div *ngIf="usernameError" class="invalid-feedback">
+            <div>Username not found</div>
+        </div>
+    </div>
+    <div class="form-group">   
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" placeholder="Please Enter your Password" />
+        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+            <div *ngIf="f['password'].errors['required']">Password is required</div>
+            <div *ngIf="f['password'].errors['minlength']">Password must be at least 6 characters</div>
+        </div>
+        <div *ngIf="passwordError" class="invalid-feedback">
+            <div>Password is wrong</div>
+        </div>
+    </div>
+    <div>
+      <!-- Forgot password -->
+      <a href="">Forgot password?</a>
+    </div>
+ 
+
+  <!-- Sign in button -->
+  <button mdbBtn color="info" block="true" class="my-4 btn btn-primary" type="submit">Sign in</button>
+
+  <!-- Register -->
+  <p>Not a member?
+    <a [routerLink]="['/register']">Register</a>
+  </p>
+  
+</form>
+<!-- Default form login -->

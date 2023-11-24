@@ -1,0 +1,24 @@
+<a [routerLink]="['/atmEvents']">
+    <button type="menu" class="btn btn-primary">Back</button>
+</a>
+<h2>Transaction History</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Transaction Id</th>
+            <th>Transaction Amount</th>
+            <th>Transaction Date & Time</th>
+            <th>Transaction Type</th>
+            <th>Account Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let transaction of transactions">
+            <td> {{ transaction.transactionId }} </td>
+            <td> {{ transaction.transactionAmount }} </td>
+            <td> {{ transaction.transactionDateTime }} </td>
+            <td> {{ transaction.transactionType }} </td>
+            <td> {{ transaction.account.accNo }} </td>
+        </tr>
+    </tbody>
+</table>

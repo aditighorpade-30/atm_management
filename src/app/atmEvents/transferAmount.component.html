@@ -1,0 +1,26 @@
+<div class="col-md-6 offset-md-3">
+    <a [routerLink]="['/atmEvents']">
+        <button type="menu" class="btn btn-primary">Back</button>
+    </a>
+    <h3>Amount Transfer</h3>
+    <form (ngSubmit) = "onSubmit()">
+        <div class="form-group">
+            <label>Sender Acc No</label>
+            <input type = "text" class="form-control" id="senderAccNo"
+                [(ngModel)] = "transfer.senderAccNo" name = "senderAccNo" placeholder="Enter Sender Account No."/>
+        </div>
+        <div class="form-group">
+            <label>Receiver Acc No</label>
+            <input type = "text" class="form-control" id="receiverAccNo"
+                [(ngModel)] = "transfer.receiverAccNo" name = "receiverAccNo" placeholder="Enter Receiver Account No."/>
+        </div>
+        <div class="form-group">
+            <label>Amount</label>
+            <input type = "text" class="form-control" id="amount"
+                [(ngModel)] = "transfer.amount" name = "amount" placeholder="Enter Amount"/>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success" type="submit"> Transfer</button>
+        </div>
+    </form>
+</div>
